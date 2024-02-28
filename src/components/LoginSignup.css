@@ -69,10 +69,11 @@
     outline:none ;
 }
 .forgot-password{
-    padding-left:90px;
+    padding-left: 150px;
     margin-top: 27px;
     color: rgb(5, 41, 15);
-    font-size:  18px; 
+    font-size:  18px;
+
 }
 .forgot-password span{
    background: rgb(158, 199, 97);
@@ -100,21 +101,3 @@
     background:rgb(201, 226, 163);
     color:gray;
 }
-/*.date{
-    display: flex;
-    margin: auto;
-    background: rgb(221, 215, 191);
-    width: 400px;;
-    height: 70px;
-    align-items: center; 
-    border-radius: 7px;
-}
-.date input{
-    width: 100px;;
-    height: 50px;
-    background:transparent;
-    border: none;
-    color: rgb(31, 30, 30);
-    font-size :10px; 
-    outline:none ;
-}*/
