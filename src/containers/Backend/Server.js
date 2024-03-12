@@ -1,11 +1,11 @@
 const express = require("express");
-const Mysql = require('Mysql');
+const  postgres= require(' postgres');
 const cors= require("cors");
 const app = express();
 app.use(cors());
-const db =Mysql.createConnection({
+const db = postgres.createConnection({
     host:"localhost",
     user:"root",
     password:"",
-    database:"LoginSignupy",
+    database:"LoginSignup",
 })

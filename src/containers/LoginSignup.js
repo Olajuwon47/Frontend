@@ -1,6 +1,7 @@
-  import React, { useState } from 'react';
+  import React, {useEffect, useState } from 'react';
 import '../components/LoginSignup.css';
 import Validation from '../components/LoginSignupValidation.js';
+
 import email_icon from '../Assest/email.svg';
 import password_icon from'../Assest/password.svg';
 import user_icon from '../Assest/user.svg';
@@ -14,7 +15,11 @@ const LoginSignup= () => {
     email: '',
     password: ''
 })
-
+useEffect(()=>{
+  fetch('http://localhost:3000/todos')
+  .then(response=> response.json())
+  .then(data=>this.setTodos(data));
+},[]);
   const [errors, setErrors]=useState({})
   const handleInput =(event) =>{
     setValues(prev =>({...prev, [event.target.name]:[event.target.value]}))
@@ -47,22 +52,22 @@ const LoginSignup= () => {
       </div>}
       {action==='Login'?<div></div>:<div className='input'>
           <img src={user_icon} alt="" />
-          <input type='user'placeholder='username' />
+          <input type='user'placeholder='username'  />
        </div>}
       {action==='Login'?<div></div>: <div className='input'>
-          <input type="date" id="birthday" name="birthday" 
+          <input type="date" id="dob" name="date of birth" 
          onChange={handleInput} />
           {errors.date && <span className='text danger'> {errors.date} </span> } 
       </div>}
           <div className='input'>
           <img src={email_icon} alt=""/>
-          <input type='email'placeholder='@gmail.com'id='email' name='email' 
+          <input type='email'placeholder='@gmail.com' id='email' name='email'
           onChange={handleInput} />
           {errors.email && <span className='text danger'> {errors.email} </span> } 
         </div>
       <div className='input'>
           <img src={password_icon} alt=""/>
-          <input type='password'placeholder='*******' id='password' maxLength="8" minLength="6" name='password' required  
+          <input type='password' placeholder='*******' id='password'  maxLength="8" minLength="6" name='password' required  
           onChange={handleInput}/>
            {errors.password && <span className='text danger'> {errors.password} </span> }
       </div>
