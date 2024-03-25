@@ -71,6 +71,7 @@ const sampleValues = {
 
 const errors = LoginSignupValidation(sampleValues);
 console.log(errors);
+export default LoginSignupValidation;
 /*function LoginSignupValidation(values) {
     alert('')
     let error ={}

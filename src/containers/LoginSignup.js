@@ -15,16 +15,6 @@ const LoginSignup= () => {
     email: '',
     password: ''
 })
-/*const LoginSignup = () => {
-  const handleLogin = () => {
-    // Implement login logic
-    console.log('Login button clicked');
-  };
-
-  const handleSignup = () => {
-    // Implement signup logic
-    console.log('Signup button clicked');
-  };*/
 useEffect(()=>{
   fetch('http://localhost:3000/todos')
   .then(response=> response.json())

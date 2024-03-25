@@ -25,20 +25,15 @@ const Geomap = () => {
             } else {
               setError('Address not found');
             }
-          /*} catch (error) {
-            console.error('Error fetching address:', error);
-          }*/
         },
         () => {
-          /*console.error('Unable to retrieve your location');*/
           setError('Unable to retrieve your location');
         }
       );
     } else {
-      /*console.error('Geolocation is not supported by your browser');*/
       setError('Geolocation is not supported by your browser');
     }
-  /*}, []);*/
+
 } catch (error) {
   console.error('Error fetching data:', error);
   setError('Error fetching data. Please try again.');
@@ -73,7 +68,7 @@ fetchData();
               </tr>
             )}
           </tbody>
-           {/*address && <>Your current address: {address}</>}*/}
+          
        </table>
       )}
     </div>
