@@ -28,7 +28,7 @@ const LoginSignup= () => {
 useEffect(()=>{
   fetch('http://localhost:3000/todos')
   .then(response=> response.json())
-  .then(data=>this.setTodos(data));
+  .then(data=>setTodos(data));
 },[]);
   const [errors, setErrors]=useState({})
   const handleInput =(event) =>{
